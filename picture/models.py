@@ -5,7 +5,7 @@ class Picture(models.Model):
     """
     Модель изображения
     """
-    picture = models.ImageField(blank=True)
+    picture = models.FileField(blank=True)
 
     class Meta:
         verbose_name = 'Картинка'

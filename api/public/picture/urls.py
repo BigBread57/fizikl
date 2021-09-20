@@ -1,12 +1,15 @@
 from django.urls import path
+from rest_framework import routers
 
-from api.public.picture.views import PictureRetrieveDestroyApiView, PictureResizeApiView, PictureListCreateApiView
+from api.public.picture.views import PictureViewSet
 
 app_name = 'picture'
 
 
+router = routers.SimpleRouter()
+router.register('', PictureViewSet, basename='images')
+
 urlpatterns = [
-    path('', PictureListCreateApiView.as_view(), name='list_create_picture'),
-    path('<int:pk>/', PictureRetrieveDestroyApiView.as_view(), name='retrieve_destroy_picture'),
-    path('<int:pk>/resize/', PictureResizeApiView.as_view(), name='resize_picture'),
 ]
+
+urlpatterns += router.urls
