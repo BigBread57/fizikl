@@ -1,14 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>PICTURE</title>
-    <script src="/static/jquery.js"></script>
-    <link href="/static/dist/dropzone.css" rel="stylesheet" type="text/css"/>
-    <link href="/static/dist/basic.css" rel="stylesheet" type="text/css"/>
-    <script src="/static/dist/dropzone.js" type="text/javascript"></script>
-    <script src="/static/dist/dropzone-amd-module.js" type="text/javascript"></script>
-
+    <script src="{% static "jquery.js" %}"></script>
+    <link href="{% static "dist/dropzone.css" %}" rel="stylesheet">
+    <link href="{% static "dist/basic.css" %}" rel="stylesheet">
+    <script src="{% static "dist/dropzone.js" %}" type="text/javascript"></script>
+    <script src="{% static "dist/dropzone-amd-module.js" %}" type="text/javascript"></script>
 </head>
 <body>
 <h3 style="text-align: center">Cервис загрузки картинок на сервер</h3>
@@ -24,7 +24,6 @@
 <footer style="text-align: center; margin-top: 50px;">©Mazur Gleb</footer>
 </body>
 <script>
-
     $(document).ready(function () {
         Dropzone.autoDiscover = false;
         $("#dZUpload").dropzone({
@@ -40,6 +39,5 @@
             }
         });
     });
-
 </script>
 </html>
